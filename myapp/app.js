@@ -1,18 +1,28 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 3000;
 
-app.use(express.static('static'))
+// Hierin frontend CSS/JS
+app.use(express.static('public'));
 
+// Template engine: EJS wordt hier aan de Express app gelinkt
 app.set('view engine', 'ejs');
+
 // Tell the views engine/ejs where the template files are stored (Settingname, value)
 app.set('views', 'views');
 
+// Home page
 app.get('/', (req, res) => {
-    res.render('home', {
-        title: 'Goedemorgen',
+    res.render('home');
+});
+
+// Questions page
+app.get('/category/:id/questions', (req, res) => {
+    const id =  req.params.id
+    res.render('questions', {
+        vraagId: id
     });
-})
+});
 
 // app.get('/', (req, res) => res.send('Hello World!'))
 
