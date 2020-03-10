@@ -1,10 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Trivia app</title>
 </head>
 <body>
-$END$
+
+<header id="container">
+    <h1 id="doehet">Trivia API</h1>
+</header>
+
+<main id="category">
+
+    <nav>
+        <ul id="categoryList">
+            <li data-category-id="11">Film</li>
+            <li data-category-id="12">Music</li>
+            <li data-category-id="14">Tv</li>
+            <li data-category-id="21">Sports</li>
+            <li data-category-id="27">Animals</li>
+            <li data-category-id="28">Vehicles</li>
+        </ul>
+    </nav>
+
+    <form action="#results">
+        <ul id="questionList">
+        </ul>
+        <button type="submit">Results</button>
+    </form>
+
+</main>
+
+<section id="quiz">
+    <p>Dit is de quizpagina</p>
+</section>
+
+<section id="results">
+    <p>Dit is de resultatenpagina</p>
+</section>
+
+<script src="js/lib/transparency.js"></script>
+<!-- <script type="text/javascript" src="js/lib/routie.js"></script> -->
+<!-- <script type="text/javascript" src="js/modules/router.js"></script> -->
+<!-- <script type="module" src="js/main.js"></script> -->
 </body>
 </html>
