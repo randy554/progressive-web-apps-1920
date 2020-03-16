@@ -75,3 +75,17 @@ main > nav > ul > li {
 li > a {
   color: blue;
 }
+
+.True {
+  border: 3px solid #58D68D;
+  width: 50%;
+}
+
+.False {
+  border: 3px solid #EC7063;
+  width: 50%;
+}
+
+.quizQuestions {
+  font-weight: bold;
+}

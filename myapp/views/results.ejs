@@ -13,10 +13,13 @@
 
 
 <main id="category">
-    <h2><%= yourScore %></h2>
+    <h2>Je hebt <%= yourScore %> van de 12 goed!</h2>
 
-    <% Object.entries(userAnswers).forEach(object => { %>
-        <p><%= object[0] + ': ' + object[1] %></p>
+    <% Object.entries(userAnswers).forEach((object, index) => { %>
+        <p class="quizQuestions">Vraag <%= index+1 %>: <%= apiData[index].question %></p>
+<!--        <p><%= object[0] + ': ' + object[1] %></p>-->
+        <p class="<%= apiData[index].correct_answer %>">Jouw antwoord: <%= object[1] %></p>
+<!--        <p>Juiste antwoord: <%= apiData[index].correct_answer %></p>-->
        <% }); %>
 
 </main>

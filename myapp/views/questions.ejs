@@ -11,7 +11,8 @@
     <h1 id="doehet"><a href="\">Trivia API</a></h1>
 </header>
 
-<a href="#">De vragen van category: <%= vraagId %> </a>
+<!--<a href="#">De vragen van category: <%= vraagId %> </a>-->
+<h2>Questions</h2>
 
 <main id="category">
 
@@ -19,7 +20,7 @@
     <form method="post" action="results">
         <ul id="questionList">
             <% alleData.results.map((result, index) => { %>
-                <li> <%= result.question %> </li>
+                <li class="quizQuestions"><%= index+1 %>. <%= result.question %> </li>
                     <input id="yes<%= index %>" type="radio" name="question<%= index %>" value="True" required>
                     <label for="yes<%= index %>">True</label>
                     <input id="no<%= index %>" type="radio" name="question<%= index %>" value="False" required>

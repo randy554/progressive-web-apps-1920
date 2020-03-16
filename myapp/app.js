@@ -74,9 +74,10 @@ app.post('/category/:id/results', (req, res) => {
         }
     }
     const data = req.body;
-
+    console.log('Lokale API DB:', getLocalApiData());
     console.log('hier is je data: ', data);
     res.render('results', {
+        apiData: getLocalApiData(),
         userAnswers: data,
         yourScore: score
     });
