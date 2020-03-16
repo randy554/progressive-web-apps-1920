@@ -30,10 +30,19 @@ Omschrijving
 
 De API biedt de mogelijkheid om tussen de 1 en 50 Trivia vragen te terug te krijgen. Deze vragen kunnen gaan over verschillende categoriën zoals politiek & geschiedenis. Verder kun je de moeilijkheidsgraad van de vragen aanpassen op easy, medium en hard. Ook kan er gekozen worden om multiple choice antwoorden of boolean antwoorden te ontvangen.
 
+## Built with
+
+[x] Node 
+[x] Express
+[x] EJS
+[x] Nodemon
+[x] Node-fetch
+[x] Body-parser
+
 ## To Do
 
-    [] Tooling
-    [] Service workers
+  [] Tooling
+  [] Service workers
 
 ## License
 
