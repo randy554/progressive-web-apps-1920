@@ -16,33 +16,24 @@ Een client-side trivia app met 12 leuke vragen!
 
 ![Exercises](https://raw.githubusercontent.com/randy554/progressive-web-apps-1920/master/docs/img/resultspage.png)
 
-Goals: Convert application to a Progressive Web App
 
-[Opdrachten](https://github.com/cmda-minor-web/progressive-web-apps-1920/blob/master/course/week-2.md)  
-[Slides](...)
+## API 
 
+De app maakt gebruik van de Trivia API. De response data is JSON. Er kan gebruik worden gemaakt van een SESSION TOKEN. Deze zorgt ervoor dat gedurende de sessie alleen maar unieke vragen worden terug gestuurd. De sessie doet 6 uur. Verder kan de API zonder key worden gebruikt. Er is in de documentatie helaas niks te vinden over limiet van API gebruik.
 
-### Week 2 - Critical Rendering Path 📉 
+### Voorbeeld van response data:
 
-Doel: Optimize the Critical Rendering Path   
-[Opdrachten](https://github.com/cmda-minor-web/progressive-web-apps-1920/blob/master/course/week-3.md)  
-[Slides](...)
+https://opentdb.com/api.php?amount=12&category=12&difficulty=easy&type=boolean
 
+Omschrijving
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+De API biedt de mogelijkheid om tussen de 1 en 50 Trivia vragen te terug te krijgen. Deze vragen kunnen gaan over verschillende categoriën zoals politiek & geschiedenis. Verder kun je de moeilijkheidsgraad van de vragen aanpassen op easy, medium en hard. Ook kan er gekozen worden om multiple choice antwoorden of boolean antwoorden te ontvangen.
 
-<!-- ☝️ replace this description with a description of your own work -->
+## To Do
 
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
+[] Tooling
+[] Service workers
 
-<!-- Maybe a table of contents here? 📚 -->
+## License
 
-<!-- How about a section that describes how to install this project? 🤓 -->
-
-<!-- ...but how does one use this project? What are its features 🤔 -->
-
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
-
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
-
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+Creative Commons Attribution-ShareAlike 4.0 International Link 
