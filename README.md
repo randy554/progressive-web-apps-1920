@@ -24,6 +24,7 @@ De app maakt gebruik van de Trivia API. De response data is JSON. Er kan gebruik
 ### Voorbeeld van response data:
 
 https://opentdb.com/api.php?amount=12&category=12&difficulty=easy&type=boolean
+![Trivia API](https://raw.githubusercontent.com/randy554/progressive-web-apps-1920/master/docs/img/https_opentdb_API.png)
 
 Omschrijving
 
@@ -31,8 +32,8 @@ De API biedt de mogelijkheid om tussen de 1 en 50 Trivia vragen te terug te krij
 
 ## To Do
 
-[] Tooling
-[] Service workers
+    [] Tooling
+    [] Service workers
 
 ## License
 
