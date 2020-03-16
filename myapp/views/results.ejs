@@ -18,8 +18,8 @@
     <% Object.entries(userAnswers).forEach((object, index) => { %>
         <p class="quizQuestions">Vraag <%= index+1 %>: <%= apiData[index].question %></p>
 <!--        <p><%= object[0] + ': ' + object[1] %></p>-->
-        <p class="<%= apiData[index].correct_answer %>">Jouw antwoord: <%= object[1] %></p>
-<!--        <p>Juiste antwoord: <%= apiData[index].correct_answer %></p>-->
+        <p>Jouw antwoord: <%= object[1] %></p>
+        <p class="True">Juiste antwoord: <%= apiData[index].correct_answer %></p>
        <% }); %>
 
 </main>
