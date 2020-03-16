@@ -1,20 +1,20 @@
-# Progressive Web Apps @cmda-minor-web · 2019-2020
-
-
+# Progressive Web Apps with the Trivia App
 
 ## Concept
 
+Een client-side trivia app met 12 leuke vragen!
+
 ### Overzichtspagina
 
-[Overzichtspagina](https://raw.githubusercontent.com/randy554/progressive-web-apps-1920/master/docs/img/homepage.png)
+![Overzichtspagina](https://raw.githubusercontent.com/randy554/progressive-web-apps-1920/master/docs/img/homepage.png)
 
 ### Vragenpagina
 
-[Exercises](https://raw.githubusercontent.com/randy554/progressive-web-apps-1920/master/docs/img/questionpage.png)  
+![Exercises](https://raw.githubusercontent.com/randy554/progressive-web-apps-1920/master/docs/img/questionpage.png)  
  
 ### Resultatenpagina 
 
-[Exercises](https://raw.githubusercontent.com/randy554/progressive-web-apps-1920/master/docs/img/resultspage.png)
+![Exercises](https://raw.githubusercontent.com/randy554/progressive-web-apps-1920/master/docs/img/resultspage.png)
 
 Goals: Convert application to a Progressive Web App
 
