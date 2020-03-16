@@ -5,6 +5,8 @@ const app = express();
 const port = 3000;
 let dataUserAnswers = [];
 let dataStoreAll = [];
+const totalScore = 12;
+let score = 0;
 
 // Map voor frontend CSS/JS
 app.use(express.static('public'));
@@ -20,6 +22,7 @@ app.set('views', 'views');
 
 // Home page
 app.get('/', (req, res) => {
+    resetQuiz();
     res.render('home');
 });
 
@@ -57,38 +60,49 @@ app.post('/category/:id/results', (req, res) => {
     const answers = Object.values(req.body);
     storeUserAnswers(answers);
 
+    console.log(getLocalApiData());
 
-    console.log('Opgeslagen', answers);
-    console.log('De waardes', Object.values(req.body));
-    console.log('Answers DB', dataUserAnswers);
-    getLocalApiData();
 
-    getUserAnswer();
-    debugger;
+    for (var i = 0; i < dataUserAnswers[0].length; i++){
+
+        if(dataUserAnswers[0][i] === dataStoreAll[0].results[i].correct_answer){
+            score++;
+            console.log('Goede antwoord');
+
+        }else{
+            console.log('Fout antwoord');
+        }
+    }
     const data = req.body;
 
     console.log('hier is je data: ', data);
     res.render('results', {
-        userAnswers: data
+        userAnswers: data,
+        yourScore: score
     });
 
 });
 
+function resetQuiz() {
+    score = 0;
+    dataStoreAll = [];
+    dataUserAnswers = [];
+}
+
 function storeUserAnswers(userAnswers){
     dataUserAnswers.push(userAnswers);
+}
+
+function getUserAnswer(answerNumber){
+    return dataUserAnswers[0][answerNumber];
 }
 
 function storeAll(apiData) {
     dataStoreAll.push(apiData);
 }
 
-function getUserAnswer(){
-    console.log('Derde antwoord: ', dataUserAnswers[0][7]);
-}
-
 function getLocalApiData(){
-    console.log('Dit is alle lokale Api Data: ', dataStoreAll[0].results);
-    console.log('Dit is lokale vraag Api Data: ', dataStoreAll[0].results[11].question);
+    return dataStoreAll[0].results;
 }
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
