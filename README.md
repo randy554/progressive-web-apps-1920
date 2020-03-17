@@ -55,6 +55,7 @@ De API biedt de mogelijkheid om tussen de 1 en 50 Trivia vragen te terug te krij
 ## To Do
 
 - [] Tooling
+- [] HTML encode issue
 - [] Service workers
 
 ## License
