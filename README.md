@@ -41,15 +41,15 @@ De API biedt de mogelijkheid om tussen de 1 en 50 Trivia vragen te terug te krij
 
 ## Install
 
-# 1. Clone de Repo naar je pc
+### 1. Clone de Repo naar je pc
 
-# 2. Navigeer naar de root van de app
+### 2. Navigeer naar de root van de app
 
-# 3. Installeer paketten
+### 3. Installeer paketten
 
-# 4. Start server
+### 4. Start server
 
-# 5. Bekijk site
+### 5. Bekijk site
 
 
 ## To Do
