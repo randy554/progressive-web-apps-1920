@@ -32,17 +32,17 @@ De API biedt de mogelijkheid om tussen de 1 en 50 Trivia vragen te terug te krij
 
 ## Built with
 
-[x] Node 
-[x] Express
-[x] EJS
-[x] Nodemon
-[x] Node-fetch
-[x] Body-parser
+- [x] Node 
+- [x] Express
+- [x] EJS
+- [x] Nodemon
+- [x] Node-fetch
+- [x] Body-parser
 
 ## To Do
 
-  [] Tooling
-  [] Service workers
+- [] Tooling
+- [] Service workers
 
 ## License
 
