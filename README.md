@@ -39,6 +39,19 @@ De API biedt de mogelijkheid om tussen de 1 en 50 Trivia vragen te terug te krij
 - [x] Node-fetch
 - [x] Body-parser
 
+## Install
+
+1. Clone de Repo naar je pc
+
+2. Navigeer naar de root van de app
+
+3. Installeer paketten
+
+4. Start server
+
+5. Bekijk site
+
+
 ## To Do
 
 - [] Tooling
