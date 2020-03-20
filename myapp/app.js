@@ -1,8 +1,10 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const bodyParser = require('body-parser');
+
 const app = express();
 const port = 3000;
+//
 let dataUserAnswers = [];
 let dataStoreAll = [];
 const totalScore = 12;
@@ -106,4 +108,4 @@ function getLocalApiData(){
     return dataStoreAll[0].results;
 }
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`Example app listening on port ${port}!`), console.log(`open the page -> http://localhost:${port}`));
