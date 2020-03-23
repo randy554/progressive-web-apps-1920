@@ -1,28 +1,18 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/index.css">
-    <title>Trivia app</title>
-</head>
-<body>
+<%- include('./partials/header.ejs') %>
 
-<header id="container">
-    <h1 id="doehet"><a href="\">Trivia API</a></h1>
-</header>
-
+<h2>Je hebt <%= yourScore %> van de 12 goed!</h2>
 
 <main id="category">
-    <h2>Je hebt <%= yourScore %> van de 12 goed!</h2>
 
     <% Object.entries(userAnswers).forEach((object, index) => { %>
+    <div class="questionBlock">
         <p class="quizQuestions">Vraag <%= index+1 %>: <%= apiData[index].question %></p>
 <!--        <p><%= object[0] + ': ' + object[1] %></p>-->
         <p>Jouw antwoord: <%= object[1] %></p>
         <p class="True">Juiste antwoord: <%= apiData[index].correct_answer %></p>
+    </div>
        <% }); %>
 
 </main>
 
-</body>
-</html>
+<%- include('./partials/footer.ejs') %>

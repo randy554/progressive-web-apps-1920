@@ -1,38 +1,26 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/index.css">
-    <title>Trivia app</title>
-</head>
-<body>
-
-<header id="container">
-    <h1 id="doehet"><a href="\">Trivia API</a></h1>
-</header>
+<%- include('./partials/header.ejs') %>
 
 <!--<a href="#">De vragen van category: <%= vraagId %> </a>-->
 <h2>Questions</h2>
 
 <main id="category">
 
-
     <form method="post" action="results">
         <ul id="questionList">
             <% alleData.results.map((result, index) => { %>
+            <div class="questionBlock">
                 <li class="quizQuestions"><%= index+1 %>. <%= result.question %> </li>
                     <input id="yes<%= index %>" type="radio" name="question<%= index %>" value="True" required>
                     <label for="yes<%= index %>">True</label>
                     <input id="no<%= index %>" type="radio" name="question<%= index %>" value="False" required>
                     <label for="no<%= index %>">False</label>
+            </div>
             <% }); %>
         </ul>
-
 
         <button type="submit">Results</button>
     </form>
 
 </main>
 
-</body>
-</html>
+<%- include('./partials/footer.ejs') %>

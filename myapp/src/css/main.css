@@ -3,6 +3,10 @@ html,body {
   padding: 0;
 }
 
+body {
+  background-color: #F9F9F9;
+}
+
 body > header > h1 {
   margin: 0;
   padding: 20px;
@@ -15,6 +19,12 @@ body > header > h1 {
 h1 > a, h1 {
   text-decoration: none;
   color: white;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 main > nav > ul {
@@ -32,8 +42,27 @@ main > nav > ul > li {
   border-radius: 5px;
   font-weight: 600;
 }
+#category {
+  /*max-width: 900px;*/
+  /*min-width: 630px;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.questionBlock {
+  background-color: #F1F1F1;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 3px;
+  box-shadow: 0px 1px 3px #0c1f31;
+  min-width: 650px;
+  max-width: 750px;
+}
 
+.questionBlock:hover {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+}
 
 #results {
   color: black;
@@ -59,14 +88,20 @@ li > a {
 
 .True {
   border: 3px solid #58D68D;
-  width: 50%;
 }
 
 .False {
   border: 3px solid #EC7063;
-  width: 50%;
 }
 
 .quizQuestions {
   font-weight: bold;
+  list-style-type: none;
+  padding-bottom: 0.5em;
+  letter-spacing: 0.3px;
+}
+
+#categoryList {
+  margin-left: 0;
+  padding-left: 0;
 }
