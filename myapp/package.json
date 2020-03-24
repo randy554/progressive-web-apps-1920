@@ -1,7 +1,7 @@
 {
   "name": "myapp",
   "version": "1.0.0",
-  "description": "Test app voor minor web dev/vak progressive web",
+  "description": "App voor minor web dev/vak progressive web",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",

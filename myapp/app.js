@@ -28,6 +28,10 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+app.get('/about', (req, res) => {
+    res.render('about');
+});
+
 // Questions page
 app.get('/category/:id/questions', (req, res) => {
 
@@ -108,4 +112,4 @@ function getLocalApiData(){
     return dataStoreAll[0].results;
 }
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`), console.log(`open the page -> http://localhost:${port}`));
+app.listen(port, () => console.log(`Trivia app listening on port ${port}!`), console.log(`open the page -> http://localhost:${port}`));
