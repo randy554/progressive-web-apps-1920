@@ -1,20 +1,24 @@
-const express = require('express');
-const fetch = require('node-fetch');
-const bodyParser = require('body-parser');
+require('dotenv').config();
+const express       = require('express');
+const fetch         = require('node-fetch');
+const bodyParser    = require('body-parser');
+const compression   = require('compression');
 
-const app = express();
-const port = 3000;
+const app           = express();
+const port          = 3000;
 //
 let dataUserAnswers = [];
-let dataStoreAll = [];
-const totalScore = 12;
-let score = 0;
+let dataStoreAll    = [];
+const totalScore    = 12;
+let score           = 0;
 
 // Map voor frontend CSS/JS
 app.use(express.static('public'));
 
 // Gebruik de bodyParser om Post waardes te pakken
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(compression());
 
 // Template engine: EJS wordt hier aan de Express app gelinkt
 app.set('view engine', 'ejs');
@@ -28,8 +32,8 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.get('/about', (req, res) => {
-    res.render('about');
+app.get('/offline', (req, res) => {
+    res.render('offline');
 });
 
 // Questions page
@@ -112,4 +116,4 @@ function getLocalApiData(){
     return dataStoreAll[0].results;
 }
 
-app.listen(port, () => console.log(`Trivia app listening on port ${port}!`), console.log(`open the page -> http://localhost:${port}`));
+app.listen(process.env.PORT || port, () => console.log(`Trivia app listening on port ${port}!`), console.log(`open the page -> http://localhost:${port}`));
