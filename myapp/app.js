@@ -23,20 +23,21 @@ app.use(compression());
 // Template engine: EJS wordt hier aan de Express app gelinkt
 app.set('view engine', 'ejs');
 
-// Tell the views engine/ejs where the template files are stored (Settingname, value)
+// Verteld aan de views engine/ejs waar de template bestanden moeten worden opgeslagen (Settingname, value)
 app.set('views', 'views');
 
-// Home page
+// Home pagina
 app.get('/', (req, res) => {
     resetQuiz();
     res.render('home');
 });
 
+// Offline pagina
 app.get('/offline', (req, res) => {
     res.render('offline');
 });
 
-// Questions page
+// Questions pagina
 app.get('/category/:id/questions', (req, res) => {
 
     const userCategoryChoice = req.params.id;
@@ -44,7 +45,7 @@ app.get('/category/:id/questions', (req, res) => {
     const typeAnswer = 'boolean';
 
 
-    //Build API endpoint
+    // API endpoint
     const apiEndpoint = `https://opentdb.com/api.php?amount=${questionsAmount}&category=${userCategoryChoice}&type=${typeAnswer}`;
 
     const data = fetch(apiEndpoint)
@@ -61,11 +62,9 @@ app.get('/category/:id/questions', (req, res) => {
         });
 });
 
+// Results pagina
 app.post('/category/:id/results', (req, res) => {
 
-
-    // console.log('Is die van mij', Object.entries(req.body));
-    // console.log('De sleutels', Object.keys(req.body));
 
     const answers = Object.values(req.body);
     storeUserAnswers(answers);
