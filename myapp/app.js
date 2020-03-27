@@ -115,4 +115,4 @@ function getLocalApiData(){
     return dataStoreAll[0].results;
 }
 
-app.listen(process.env.PORT || port, () => console.log(`Trivia app listening on port ${port}!`), console.log(`open the page -> http://localhost:${port}`));
+app.listen(process.env.PORT || port, () => console.log(`open the page -> http://localhost:${port}`));
