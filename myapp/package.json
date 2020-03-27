@@ -3,8 +3,8 @@
   "description": "App voor minor web dev/vak progressive web",
   "version": "1.0.0",
   "engines": {
-    "node": "12.13.0",
-    "npm": "6.12.0"
+    "node": "12.13.x",
+    "npm": "6.12.x"
   },
   "main": "app.js",
   "scripts": {
