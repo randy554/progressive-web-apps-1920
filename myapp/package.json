@@ -1,11 +1,11 @@
 {
   "name": "myapp",
+  "description": "App voor minor web dev/vak progressive web",
   "version": "1.0.0",
   "engines": {
     "node": "12.13.x",
     "npm": "6.x"
   },
-  "description": "App voor minor web dev/vak progressive web",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
