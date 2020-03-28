@@ -8,7 +8,7 @@
   },
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "prestart": "npm run build:css",
     "build:css": "node scripts/build-css.js",
     "dev": "nodemon app.js"
