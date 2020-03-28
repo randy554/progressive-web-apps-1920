@@ -28,7 +28,7 @@ app.set('views', 'views');
 
 // Home pagina
 app.get('/', (req, res) => {
-    resetQuiz();
+    // resetQuiz();
     res.render('home');
 });
 
@@ -39,7 +39,7 @@ app.get('/offline', (req, res) => {
 
 // Questions pagina
 app.get('/category/:id/questions', (req, res) => {
-
+    resetQuiz();
     const userCategoryChoice = req.params.id;
     const questionsAmount = 12;
     const typeAnswer = 'boolean';
