@@ -47,11 +47,11 @@ Dit is het resultaat voor & na het toepassen van caching, css minifyen, css conc
 
 Voor
 
-![Voor](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/resultspage-Trivia%20app.png?raw=true)
+![Voor](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/zonder_cache_hele_site_network.png?raw=true)
 
 Na
 
-![Na](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/resultspage-Trivia%20app.png?raw=true)
+![Na](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/met_cache_hele_site_network.png?raw=true)
 
 </details>
 
