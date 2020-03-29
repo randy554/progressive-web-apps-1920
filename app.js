@@ -12,6 +12,13 @@ let dataStoreAll    = [];
 const totalScore    = 12;
 let score           = 0;
 
+// Hoe lang cache laten gelden?
+// .use((req, res, next) => {
+//     res.setHeader('Cache-Control', 'max-age=' + 365 * 24 * 60 *
+//         60);
+//     next();
+// })
+
 // Map voor frontend CSS/JS
 app.use(express.static('public'));
 
@@ -83,8 +90,10 @@ app.post('/category/:id/results', (req, res) => {
         }
     }
     const data = req.body;
-    console.log('Lokale API DB:', getLocalApiData());
-    console.log('hier is je data: ', data);
+
+    // console.log('Lokale API DB:', getLocalApiData());
+    // console.log('hier is je data: ', data);
+
     res.render('results', {
         apiData: getLocalApiData(),
         userAnswers: data,

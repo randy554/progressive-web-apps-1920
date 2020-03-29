@@ -45,12 +45,165 @@ De API biedt de mogelijkheid om tussen de 1 en 50 Trivia vragen te terug te krij
 
 <summary>Code</summary>
 
+```js
+const gulp = require('gulp');
+const cleanCSS = require('gulp-clean-css');
+
+.pipe(cleanCSS());
+```
+
+</details>
+
+<details>
+
+<summary>Netwerk</summary>
+
+</details>
+
+<details>
+
+<summary>Audits</summary>
+
 </details>
 
 #### Concat CSS
 
+<details>
+
+<summary>Code</summary>
+
+```js
+const gulp = require('gulp');
+const concat = require('gulp-concat');
+
+return gulp.src([
+    "./src/css/main.css",
+    "./src/css/question.css"
+])
+    .pipe(concat("index.css")) // samenvoegen bestanden en bestandsnaam opgeven
+    .pipe(gulp.dest("./public/css"));
+```
+
+</details>
+
+<details>
+
+<summary>Netwerk</summary>
+
+</details>
+
+<details>
+
+<summary>Audits</summary>
+
+</details>
+
 #### Compress files
- 
+
+<details>
+
+<summary>Code</summary>
+
+```js
+const compression   = require('compression');
+app.use(compression());
+```
+
+</details>
+
+<details>
+
+<summary>Netwerk</summary>
+
+</details>
+
+<details>
+
+<summary>Audits</summary>
+
+</details>
+
+#### Cache
+
+<details>
+
+<summary>Code</summary>
+
+De service worker wordt geregistreerd.
+
+```js
+if ('serviceWorker' in navigator){
+    navigator.serviceWorker.register('/sw.js')
+        .then((reg) => console.log('Service worker registered', reg))
+        .catch((err) => console.log('Service worker not registered', err));
+}
+```
+Bij de install event plaatsen we de bestanden die gecached moeten worden.
+
+```js
+// Install Service    Worker
+self.addEventListener('install', evt => {
+    console.log('Service worker has been installed');
+
+    evt.waitUntil(
+        caches.open(static_cache_name).then(cache => {
+            console.log('Caching shell assets');
+            return cache.addAll(assets).then(() => self.skipWaiting());
+        })
+            .catch(err => {
+                console.error(err);
+            })
+    );
+});
+```
+De fetch event
+
+```js
+// Install Service    Worker
+self.addEventListener('fetch', evt => {
+
+    console.log('Fetch event', evt.request.url);
+
+    evt.respondWith(caches.match(evt.request)
+        .then(cachedResponse => {
+
+            if (cachedResponse) {
+                return cachedResponse;
+            }
+
+            return fetch(evt.request)
+                .catch( err => {
+                    return caches.open(static_cache_name)
+                        .then(cache => cache.match('/offline'))
+                })
+
+        })
+    );
+});
+```
+
+</details>
+
+<details>
+
+<summary>Application</summary>
+
+Dit zijn de bestanden die gecached worden: home page, offline page & index.css
+
+</details>
+
+<details>
+
+<summary>Netwerk</summary>
+
+</details>
+
+<details>
+
+<summary>Audits</summary>
+
+</details>
+
 
 ## Built with
 
@@ -103,9 +256,11 @@ Mijn vragen die weergeven html specialcharacters. Weet nog niet precies waar dat
 - [x] Tooling (Gulp-concat, Gulp-autoprefixer, Gulp-clean-css)
 - [x] HTML encode issue
 - [x] Service workers
-- [] Heroku deployment
+- [x] Heroku deployment
 - [] Refactor code met modules
 - [] Comments nagaan en consistent houden
+- [] Watchers for build css
+
 
 ## Bronnen
 
