@@ -45,11 +45,11 @@ De API biedt de mogelijkheid om tussen de 1 en 50 Trivia vragen te terug te krij
 <summary>Voor & Na optimalisatie</summary>
 Dit is het resultaat voor & na het toepassen van caching, css minifyen, css concat en Gzip compression:
 
-Voor
+### Voor
 
 ![Voor](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/resultspage-Trivia%20app.png?raw=true)
 
-Na
+### Na
 
 ![Na](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/resultspage-Trivia%20app.png?raw=true)
 
@@ -73,6 +73,8 @@ const cleanCSS = require('gulp-clean-css');
 <details>
 
 <summary>Network</summary>
+
+![Zonder minify network](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/zonder_minify_network.png)
 
 </details>
 
@@ -109,6 +111,8 @@ return gulp.src([
 
 <summary>Network</summary>
 
+![zonder concat](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/zonder_concat_indexccs_verwijderd.png?raw=true)
+
 </details>
 
 <details>
@@ -137,6 +141,8 @@ app.use(compression());
 <details>
 
 <summary>Network</summary>
+
+![zonder compression network](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/zonder_compression_network_met_sw.png?raw=true)
 
 </details>
 
@@ -224,6 +230,8 @@ Dit zijn de bestanden die gecached worden: home page, offline page & index.css
 <details>
 
 <summary>Network</summary>
+
+![zonder cache](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/network_zonder_cache.png?raw=true)
 
 </details>
 
