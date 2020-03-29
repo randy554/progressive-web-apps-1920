@@ -39,6 +39,22 @@ De API biedt de mogelijkheid om tussen de 1 en 50 Trivia vragen te terug te krij
 
 ## Optimalisaties
 
+
+<details>
+
+<summary>Voor & Na optimalisatie</summary>
+Dit is het resultaat voor & na het toepassen van caching, css minifyen, css concat en Gzip compression:
+
+Voor
+
+![Voor](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/resultspage-Trivia%20app.png?raw=true)
+
+Na
+
+![Na](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/resultspage-Trivia%20app.png?raw=true)
+
+</details>
+
 #### Minify CSS
 
 <details>
