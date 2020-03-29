@@ -13,15 +13,15 @@
 
 ### Overzichtspagina
 
-![Overzichtspagina](https://raw.githubusercontent.com/randy554/progressive-web-apps-1920/master/docs/img/homepage.png)
+![Overzichtspagina](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/homepage-Trivia%20app.png?raw=true)
 
 ### Vragenpagina
 
-![Exercises](https://raw.githubusercontent.com/randy554/progressive-web-apps-1920/master/docs/img/questionpage.png)  
+![Exercises](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/questionpage-Trivia%20app.png?raw=true)  
  
 ### Resultatenpagina 
 
-![Exercises](https://raw.githubusercontent.com/randy554/progressive-web-apps-1920/master/docs/img/resultspage.png)
+![Exercises](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/resultspage-Trivia%20app.png?raw=true)
 
 
 ## API 
@@ -56,7 +56,7 @@ const cleanCSS = require('gulp-clean-css');
 
 <details>
 
-<summary>Netwerk</summary>
+<summary>Network</summary>
 
 </details>
 
@@ -88,13 +88,17 @@ return gulp.src([
 
 <details>
 
-<summary>Netwerk</summary>
+<summary>Network</summary>
 
 </details>
 
 <details>
 
 <summary>Audits</summary>
+
+Zonder concat
+
+![zonder concat](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/audit_zonder_concat_met_cache_met_compression.png?raw=true)
 
 </details>
 
@@ -113,7 +117,7 @@ app.use(compression());
 
 <details>
 
-<summary>Netwerk</summary>
+<summary>Network</summary>
 
 </details>
 
@@ -190,17 +194,21 @@ self.addEventListener('fetch', evt => {
 
 Dit zijn de bestanden die gecached worden: home page, offline page & index.css
 
+![Bestanden in cache](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/cache_bestand.png?raw=true)
+
 </details>
 
 <details>
 
-<summary>Netwerk</summary>
+<summary>Network</summary>
 
 </details>
 
 <details>
 
 <summary>Audits</summary>
+
+![Bestanden in cache](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/cache_bestand.png?raw=true)
 
 </details>
 
