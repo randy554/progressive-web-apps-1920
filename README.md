@@ -63,6 +63,9 @@ const cleanCSS = require('gulp-clean-css');
 <details>
 
 <summary>Audits</summary>
+Zonder minify
+
+![Zonder minify](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/audit.png)
 
 </details>
 
