@@ -125,6 +125,10 @@ app.use(compression());
 
 <summary>Audits</summary>
 
+Zonder compression
+
+![zonder compression](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/audit_zonder_compression.png?raw=true)
+
 </details>
 
 #### Cache
@@ -208,7 +212,7 @@ Dit zijn de bestanden die gecached worden: home page, offline page & index.css
 
 <summary>Audits</summary>
 
-![Bestanden in cache](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/cache_bestand.png?raw=true)
+![Audit met cache](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/audit.png)
 
 </details>
 
