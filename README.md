@@ -286,6 +286,65 @@ staat de require zonder () & "" en dat geeft bij mij problemen.Ik heb geleerd ov
 en hoe. Ik heb geleerd hoe je met formulieren post request data kunt ontvangen
 en deze verder kunt verwerken.
 
+<details>
+ 
+ <summary>Service worker lifecycle</summary>
+ 
+ ![service worker lifecycle](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/sw_schets.jpg?raw=true)
+ 
+ </details>
+ 
+ <details>
+ 
+ <summary>Gulp</summary>
+ 
+# CSS Minifyen | Samenvoegen | Cross browser compatible
+
+
+Door middel van Gulp wil ik mijn CSS bestanden kleiner maken en samenvoegen. Ook wil ik met 
+behulp van Gulp mijn CSS code meer browser compatible maken. Dit ga ik doen door middel van 
+Gulp pakketten.
+
+### Wat is Gulp?
+
+Gulp is een tool waarmee je veel voorkomende/ vervelende taken kan automatiseren zoals je browser
+refreshen bij het opslaan van een bestand. 
+
+
+Hoe krijg je Gulp?
+
+Voor dat we Gulp kunnen installeren hebben we een package.json file nodig
+Deze kun je aanmaken door via de terminal in je project root command: npm init uit te voeren.
+
+Gulp kun je installeren via npm op twee manieren:
+
+Npm install gulp  -g (als je hem globaal wilt installeren)
+Npm install gulp —save-dev (door dit toetevoegen komt hij in package.json onder devDependenicies )
+
+Wat leuk is aan Gulp is dat je naast eigen opdrachten (Tasks) die je kunt schrijven, gebruik kunt maken van
+plugins van andere. Hierdoor bespaar je weer tijd bij het automatiseren van je build proces. Ik ga gebruik maken
+van de volgende plugins:
+
+- Gulp-concat (voegt bestanden meerdere bestanden tot 1)
+- Gulp-autoprefixer (zorgt ervoor dat je css meer cross browser compatible wordt bijv. -webkit)
+- Gulp-clean-css (verkleint css bestanden)
+
+
+Plugins installeren
+
+Je kunt de plugins installeren door deze in je package.json file onder de devDependencies object te benoemen:
+
+"devDependencies": {
+  "gulp": "^4.0.2",
+  "gulp-autoprefixer": "^7.0.1",
+  "gulp-clean-css": "^4.2.0",
+  "gulp-concat": "^2.6.1"
+}
+
+Npm install
+ 
+ </details>
+ 
 ## Waar ik tegen aanloop
 
 Mijn vragen die weergeven html specialcharacters. Weet nog niet precies waar dat aanligt.
