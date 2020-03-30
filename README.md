@@ -311,15 +311,15 @@ Gulp is een tool waarmee je veel voorkomende/ vervelende taken kan automatiseren
 refreshen bij het opslaan van een bestand. 
 
 
-Hoe krijg je Gulp?
+### Hoe krijg je Gulp?
 
 Voor dat we Gulp kunnen installeren hebben we een package.json file nodig
 Deze kun je aanmaken door via de terminal in je project root command: npm init uit te voeren.
 
 Gulp kun je installeren via npm op twee manieren:
 
-Npm install gulp  -g (als je hem globaal wilt installeren)
-Npm install gulp —save-dev (door dit toetevoegen komt hij in package.json onder devDependenicies )
+``` Npm install gulp  -g // als je hem globaal wilt installeren ```
+``` Npm install gulp —save-dev // door dit toetevoegen komt hij in package.json onder devDependenicies ```
 
 Wat leuk is aan Gulp is dat je naast eigen opdrachten (Tasks) die je kunt schrijven, gebruik kunt maken van
 plugins van andere. Hierdoor bespaar je weer tijd bij het automatiseren van je build proces. Ik ga gebruik maken
@@ -329,19 +329,24 @@ van de volgende plugins:
 - Gulp-autoprefixer (zorgt ervoor dat je css meer cross browser compatible wordt bijv. -webkit)
 - Gulp-clean-css (verkleint css bestanden)
 
-
-Plugins installeren
+### Plugins installeren
 
 Je kunt de plugins installeren door deze in je package.json file onder de devDependencies object te benoemen:
 
+```
 "devDependencies": {
   "gulp": "^4.0.2",
   "gulp-autoprefixer": "^7.0.1",
   "gulp-clean-css": "^4.2.0",
   "gulp-concat": "^2.6.1"
 }
+```
+
+```
 
 Npm install
+
+```
  
  </details>
  
