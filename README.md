@@ -29,7 +29,15 @@
 
 - [API](#API)
 - [Bronnen](#bronnen)
-
+- [Optimalisaties](#Optimalisaties)
+- [Built with](#Built with)
+- [Install](#Install)
+- [Conclusie](#Conclusie)
+- [To Do](#To Do)
+- [Wishlist](#Wishlist)
+- [Bronnen](#Bronnen)
+- [Credit](#Credit)
+- [License](#License)
 
 ## API 
 
@@ -56,10 +64,12 @@ Dit is het resultaat voor & na het toepassen van caching, css minifyen, css conc
 
 ![Voor](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/zonder_cache_hele_site_network.png?raw=true)
 
+51ms
 ### Na
 
 ![Na](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/met_cache_hele_site_network.png?raw=true)
 
+25ms
 </details>
 
 #### Minify CSS
@@ -128,6 +138,8 @@ return gulp.src([
 
 Zonder concat
 
+Opvallend hier is bij het inladen van meerdere css bestanden (ipv met concat in 1 bestand) dat de metrics onder het kopje 
+'Performance' met uitzondering van Max Potentiel First Input Delay allemaal omhoog gingen.
 ![zonder concat](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/test/audit_zonder_concat_met_cache_met_compression.png?raw=true)
 
 </details>
@@ -196,7 +208,7 @@ self.addEventListener('install', evt => {
     );
 });
 ```
-De fetch event
+De fetch event weergeeft bij offline het eerder gechachte offline bestand weer.
 
 ```js
 // Install Service    Worker
@@ -250,6 +262,11 @@ Dit zijn de bestanden die gecached worden: home page, offline page & index.css
 
 </details>
 
+Mijn site is niet bepaald groot hierdoor waren de indivuduele optimalisatie niet heel erg indrukwekkend. Daarin tegen is
+ de over all optimalisatie wel vrij duidelijk. Het cachen van assets doet zoals ik had verwacht veel voor de performance. 
+Verder ben ik positief verast over de concat feature. Wel had ik meer verwacht van css minify, hoe wel de bestanden niet
+heel groot zijn. Het testen in igocnito modus gaf andere resultaten aan dan in de normale modus. Mijn Audit score ging van 98
+naar 100 en mijn Max Potential First Input Delay ging van 600ms naar 20ms.
 
 ## Built with
 
@@ -397,9 +414,6 @@ Npm install
  
  </details>
  
-## Waar ik tegen aanloop
-
-Mijn vragen die weergeven html specialcharacters. Weet nog niet precies waar dat aanligt.
 
 ## To Do
 
