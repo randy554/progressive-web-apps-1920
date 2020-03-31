@@ -4,12 +4,14 @@
 
 #### Een client-side trivia app met 12 leuke vragen!
 
-
 - Stap 1: Selecteer een categorie om vragen over te beantwoorden
 
 - Stap 2: Vul alle 12 vragen in (True or False) en verstuur je antwoorden
 
 - Stap 3: Bekijk je resultaat. Hoeveel vragen heb je goed?
+
+### Live demo
+[live app demo](https://the-trivia-app.herokuapp.com/)
 
 ### Overzichtspagina
 
@@ -22,6 +24,11 @@
 ### Resultatenpagina 
 
 ![Exercises](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/resultspage-Trivia%20app.png?raw=true)
+
+## Inhoudsopgave
+
+- [API](#API)
+- [Bronnen](#bronnen)
 
 
 ## API 
@@ -275,24 +282,64 @@ Dit zijn de bestanden die gecached worden: home page, offline page & index.css
 
     http://localhost:3000/
 
-## Wat heb ik geleerd?
+## Conclusie
+
+<details>
+    <summary>Client side vs Server side rendering voor het tonen van data uit een API</summary>
+    
+Bij server side renderen vinden activiteiten zoals het doen van een fetch plaatst op de server. De bezoeker krijgt 
+een html pagina terug met de content. Ditzelfde scenario bij clientside wordt uitgevoerd door de browser vandaar dat 
+er bij expressJS de fetch van de browser niet werkte en hiervoor een aparte package voor nodig was. 
+
+    
+</details>
+
+<details>
+
+<summary>Service workers</summary>
+
+De service worker zou je als het hart van een PWA (Progressive Web App) kunnen zien. Door de service worker is het bijv. mogelijk om bezoekers 
+push notificaties te versturen of offline content (html, css, png etc.) aan te serveren. Hiermee dient de
+service worker als een soort proxy tussen de client en de server. De service worker draaid op de achtergrond (op een aparte thread),
+hierdoor heeft het ook geen toegang tot de DOM. Hieronder een aantal schema's die ik had gemaakt voor verheldering: 
+
+Service worker lifecycle
+ 
+![service worker lifecycle](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/sw_schets.jpg?raw=true)
+
+Fetch event
+
+![Fetch event](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/fetch_events.jpg?raw=true)
+
+</details>
+
+<details>
+
+<summary>Critical rendering path</summary> 
+    
+De critical rendering path zijn de stappen die de browser doorloopt om een pagina te weergeven (renderen). Dit houdt in grote lijnen in
+de opbouw van de DOM, CSSOM en het verwerken van de aanpassingen van JS. Door dit proces te optimaliseren verhoog je de snelheid waarmee een pagina
+binnen de browser wordt weergeven. Binnen dit project heb ik hier aan gewerkt door:
+
+- mijn frontend javascript onderaan de pagina te plaatsen (had ook met defer of eventueel sync gekund). Hierdoor zit het de DOM zo min mogelijk in de weg.
+- de verschillende CSS bestanden samengevoegd in een bestand. Hierdoor hoeft er maar één bron te worden opgehaald.
+- het ene CSS bestand te minifyen. Dit en de vorige maatregel zorgen ervoor dat de CSS snel binnen gehaald en geparsed kan worden want zolang dit nog niet is gebeurd
+zit css in de weg van renderen.
+- gebruik te maken van cache voor mijn homepagina en css hierdoor hoeft de server niet helemaal naar de server toe voor deze assets.
+ 
+</details>
+
+#### Wat heb ik geleerd?
 
 Ik heb kennis mogen maken met NodeJS, NPM en ExpressJS. Ik heb geleerd hoe je via de terminal handmatig projecten kunt aanmaken voor
 ExpressJS. Ook heb geleerd hoe je dit door middel van een generator kunt doen. Ik heb geleerd hoe je pakketten via NPM kunt binnen halen 
 voor een project en hoe je deze als dependencie of devDependencie kan installeren. Ik heb geleerd dat je bepaalde dingen globaal kan 
 installeren of alleen binnen de context voor je project. Ik heb kennis mogen maken met EJS. Daarbij heb ik ook leren gebruik maken van
 partials. Deze heb ik helaas nog niet in mijn PWA code geplaatst maar wel in mijn Browser Technologie app (zie repo). In de example code
-staat de require zonder () & "" en dat geeft bij mij problemen.Ik heb geleerd over wat NPM scripts zijn, waarvoor je deze kunt gebruiken 
+staat de require zonder () & "" en dat geeft bij mij problemen (UPDATE: inmiddels zitten ze er nu wel bij) .Ik heb geleerd over wat NPM scripts zijn, waarvoor je deze kunt gebruiken 
 en hoe. Ik heb geleerd hoe je met formulieren post request data kunt ontvangen
 en deze verder kunt verwerken.
 
-<details>
- 
- <summary>Service worker lifecycle</summary>
- 
- ![service worker lifecycle](https://github.com/randy554/progressive-web-apps-1920/blob/master/docs/img/sw_schets.jpg?raw=true)
- 
- </details>
  
  <details>
  
@@ -360,6 +407,10 @@ Mijn vragen die weergeven html specialcharacters. Weet nog niet precies waar dat
 - [x] HTML encode issue
 - [x] Service workers
 - [x] Heroku deployment
+
+## Wishlist
+
+- [] Gifjes voor resultatenpagina
 - [] Refactor code met modules
 - [] Comments nagaan en consistent houden
 - [] Watchers for build css
@@ -381,7 +432,7 @@ Mijn vragen die weergeven html specialcharacters. Weet nog niet precies waar dat
 
 Dank aan de volgende personen voor hun uitleg en ondersteuning:
 - Tabish Nanhekhan (Service Workers)
-- Wouter Van Der Heijde (Gulp)
+- Wouter Van Der Heijde (NPM scripts)
 
 
 ## License
