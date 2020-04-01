@@ -19,13 +19,13 @@ let score           = 0;
 //     next();
 // })
 
+app.use(compression());
+
 // Map voor frontend CSS/JS
 app.use(express.static('public'));
 
 // Gebruik de bodyParser om Post waardes te pakken
 app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(compression());
 
 // Template engine: EJS wordt hier aan de Express app gelinkt
 app.set('view engine', 'ejs');
