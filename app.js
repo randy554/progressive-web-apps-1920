@@ -6,19 +6,13 @@ const compression   = require('compression');
 
 const app           = express();
 const port          = 3000;
-//
+
 let dataUserAnswers = [];
 let dataStoreAll    = [];
-const totalScore    = 12;
 let score           = 0;
 
-// Hoe lang cache laten gelden?
-// .use((req, res, next) => {
-//     res.setHeader('Cache-Control', 'max-age=' + 365 * 24 * 60 *
-//         60);
-//     next();
-// })
 
+// Gebruik compression
 app.use(compression());
 
 // Map voor frontend CSS/JS
@@ -46,7 +40,9 @@ app.get('/offline', (req, res) => {
 
 // Questions pagina
 app.get('/category/:id/questions', (req, res) => {
+
     resetQuiz();
+
     const userCategoryChoice = req.params.id;
     const questionsAmount = 12;
     const typeAnswer = 'boolean';
@@ -55,14 +51,15 @@ app.get('/category/:id/questions', (req, res) => {
     // API endpoint
     const apiEndpoint = `https://opentdb.com/api.php?amount=${questionsAmount}&category=${userCategoryChoice}&type=${typeAnswer}`;
 
+    // Haal de api data binnen
     const data = fetch(apiEndpoint)
         .then(result => result.json())
         .then(jsonReturnData => {
 
+            // Sla lokaal op
             storeAll(jsonReturnData);
 
             res.render('questions', {
-                vraagId: userCategoryChoice,
                 alleData: jsonReturnData
             });
 
@@ -89,10 +86,8 @@ app.post('/category/:id/results', (req, res) => {
             console.log('Fout antwoord');
         }
     }
-    const data = req.body;
 
-    // console.log('Lokale API DB:', getLocalApiData());
-    // console.log('hier is je data: ', data);
+    const data = req.body;
 
     res.render('results', {
         apiData: getLocalApiData(),
@@ -102,7 +97,8 @@ app.post('/category/:id/results', (req, res) => {
 
 });
 
-function resetQuiz() {
+// Reset de quiz
+function resetQuiz(){
     score = 0;
     dataStoreAll = [];
     dataUserAnswers = [];
@@ -112,11 +108,8 @@ function storeUserAnswers(userAnswers){
     dataUserAnswers.push(userAnswers);
 }
 
-function getUserAnswer(answerNumber){
-    return dataUserAnswers[0][answerNumber];
-}
-
-function storeAll(apiData) {
+// Sla API data lokaal op
+function storeAll(apiData){
     dataStoreAll.push(apiData);
 }
 
